@@ -18,7 +18,7 @@ h1{
     text-decoration: underline;
     background: rgb(255,0,0);
     background: linear-gradient(194deg, rgba(255,0,0,1) 0%, rgba(46,38,38,1) 73%);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .App-header {
