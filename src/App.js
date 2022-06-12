@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation/Navigation.js';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Navigation />
-        <h1>Tienda Online DeGamers</h1>
-        <img src={logo} className="App-logo" alt="logo" />
+      <Navigation />
+      <ItemListContainer greeting= 'Bienvenidos a mi Ecommerce'/>
+      <h1>Tienda Online DeGamers</h1>
       </header>
     </div>
   );
