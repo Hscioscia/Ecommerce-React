@@ -1,8 +1,8 @@
 
-const ItemListContainer = (props) => {
+const ItemListContainer = ({greeting}) => {
     return(
-    <div className="ItemList" style={{ color: "white"}}>
-        <h2>{props.greeting}</h2>
+    <div className="ItemList" style={{ color: "white", }}>
+        <h2>{greeting}</h2>
     </div>
     )
     };
