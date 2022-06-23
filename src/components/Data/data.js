@@ -9,10 +9,10 @@ export const data = [
   },
   {
     id: 2,
-    name: "Notebook HP 240 14",
-    img: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25750_Notebook_HP_240_14__Core_i3_1005G1_4GB_1TB_HDD_FreeDos_c10eb7eb-grn.jpg",
-    price: 80000,
-    stock: 4,
+    name: "Notebook ASUS X512 15.6",
+    img: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_28759_Notebook_ASUS_X512_15.6__I3_1005G1_4GB_1TB_HDD_W10_ESP_42e6a0f9-grn.jpg",
+    price: 77000,
+    stock: 6,
   },
   {
     id: 3,
@@ -23,10 +23,11 @@ export const data = [
   },
   {
     id: 4,
-    name: "Notebook ASUS X512 15.6",
-    img: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_28759_Notebook_ASUS_X512_15.6__I3_1005G1_4GB_1TB_HDD_W10_ESP_42e6a0f9-grn.jpg",
-    price: 77000,
-    stock: 6,
+    name: "Notebook HP 240 14",
+    img: "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25750_Notebook_HP_240_14__Core_i3_1005G1_4GB_1TB_HDD_FreeDos_c10eb7eb-grn.jpg",
+    description: "La notebook HP 240 G7 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.",
+    price: 80000,
+    stock: 4,
   },
   {
     id: 5,
@@ -71,3 +72,15 @@ export const data = [
     stock: 6,
   },
 ];
+
+export const getProductId = (id) =>{
+  return new Promise ((resolve,reject) => {
+      setTimeout(() => {
+          if(data.length>0){
+              resolve(data.find(prod => prod.id === parseInt(id)))}
+          else{
+              reject("")
+          } 
+      }, 1500);
+  })
+}

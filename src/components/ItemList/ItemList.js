@@ -1,6 +1,6 @@
 import Item from '../Item/Item';
 import '../ItemList/ItemList.css'
-import { data } from '../ItemListContainer/data';
+import { data } from '../Data/data';
 
 const ItemList = () => {
     

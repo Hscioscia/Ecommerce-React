@@ -1,0 +1,11 @@
+.detailContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    border: 2px solid white;
+    max-height: 900px;
+}
+
+h2, h3{
+    color: white;
+}
