@@ -1,18 +1,25 @@
 import {useState, useEffect} from "react";
 import ItemList from "../ItemList/ItemList";
-import {data} from '../Data/data'
+import {data} from '../../Data/data'
+import { useParams } from "react-router-dom";
+
 
 const ItemListContainer = () =>{
+    const {categoryId} = useParams();
     const [products, setProducts] = useState ([]);
 
+
     useEffect (() => {
-        setProducts(data)
-    }, []);
+        categoryId ? setProducts(data.filter((i) => i.id === categoryId)) : setProducts(data);
+    }, [categoryId]);
 
-
+    console.log("categoryID", categoryId)
+   
     return(
-        <ItemList products= {products} />
+            <ItemList products= {products} {...products} />
     )
 }
 
 export default ItemListContainer;
+
+/* categoryId ? setProducts(data.filter( i => i.category === categoryId)) : setProducts(data); }, [categoryId]); */

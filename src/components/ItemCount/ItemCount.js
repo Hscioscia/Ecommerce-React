@@ -15,7 +15,7 @@ const ItemCount = ({ stock, initial }) => {
   };
   return (
     <div className="counterC">
-      <p>Contador: {counter}</p>
+      <p>Cantidad: {counter}</p>
         <button className="btn1" onClick={counterUp}>
           +
         </button>

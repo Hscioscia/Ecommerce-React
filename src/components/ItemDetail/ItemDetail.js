@@ -3,10 +3,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { CardActionArea, CardActions } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount'
 
-export default function ActionAreaCard({img, name, description, price}) {
+export default function ActionAreaCard({img, img2, stock, id, category, name, description, price}) {
   return (
     <Card sx={{ maxWidth: 350 }}>
       <CardActionArea>
@@ -29,9 +29,7 @@ export default function ActionAreaCard({img, name, description, price}) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
         { <ItemCount stock={5} initial={1} /> }  
-        </Button>
       </CardActions>
     </Card>
   );

@@ -1,17 +1,18 @@
 import '../Navigation/Navigation.css';
 import '../CartWidget/CartWidget.js'
 import CartWidget from '../CartWidget/CartWidget.js';
+import {Link} from 'react-router-dom'
 
 const Navigation = () => {
 return(
 <nav className= "circle">
 <ul>
-  <li><a className="active" href="#home">Inicio</a></li>
-  <li><a href="#products">Productos</a></li>
-  <li><a href="#gaming">Componentes</a></li>
-  <li><a href="#contact">Pc Armadas y Notebook</a></li>
-  <CartWidget />
+  <Link to= '/' className='li'>Inicio</Link>
+  <Link to= '/category/hombre' className='li'>Hombre</Link>
+  <Link to= '/category/mujer' className='li'>Mujer</Link>
+  <Link to= '/category/talles' className='li'>Tabla de talles</Link>
 </ul>
+<CartWidget />
 </nav>
 )
 };

@@ -2,10 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction:row;
-    border: 2px solid white;
+    border: 2px solid #ffffff;
     max-height: 900px;
 }
 
 h2, h3{
-    color: white;
+    color: #ffffff;
 }
