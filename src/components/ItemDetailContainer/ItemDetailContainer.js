@@ -12,7 +12,7 @@ const ItemDetailContainer = () =>{
         getProductId(id)
             .then(res => {
                 setProduct(res)
-                setProduct(data.find(prod => prod.id === (id)));
+                setProduct(data.find(prod => prod.id === Number(id)));
             }
             )
             .catch(err => console.log(err))

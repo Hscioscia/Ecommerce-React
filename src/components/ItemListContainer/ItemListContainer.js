@@ -10,11 +10,11 @@ const ItemListContainer = () =>{
 
 
     useEffect (() => {
-        categoryId ? setProducts(data.filter((i) => i.id === categoryId)) : setProducts(data);
+        categoryId ? setProducts(data.filter((i) => i.category === categoryId)) : setProducts(data);
     }, [categoryId]);
 
     console.log("categoryID", categoryId)
-   
+                
     return(
             <ItemList products= {products} {...products} />
     )

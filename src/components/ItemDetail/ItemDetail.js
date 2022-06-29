@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount'
+import '../ItemDetail/ItemDetail.css'
 
 export default function ActionAreaCard({img, img2, stock, id, category, name, description, price}) {
   return (

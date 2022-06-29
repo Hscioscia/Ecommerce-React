@@ -5,8 +5,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Link } from 'react-router-dom'
+import '../Item/Item.css'
 
-export default function ActionAreaCard({data, id}) {
+export default function ActionAreaCard({data}) {
   return (
     <Card sx={{ maxWidth: 320}}>
       <CardActionArea>
@@ -25,7 +26,7 @@ export default function ActionAreaCard({data, id}) {
           </Typography>
         </CardContent>
       </CardActionArea>
-        <Link to={`/item/${id}` }> Ver Mas </Link>
+        <Link className='btn-info' to={`/item/${data.id}` }> Ver Mas </Link>
     </Card>
   );
 }
