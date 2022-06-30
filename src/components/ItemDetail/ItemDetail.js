@@ -4,34 +4,54 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
-import ItemCount from '../ItemCount/ItemCount'
-import '../ItemDetail/ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../ItemDetail/ItemDetail.css';
 
-export default function ActionAreaCard({img, img2, stock, id, category, name, description, price}) {
+const ItemDetail = ({img, img2, stock, id, category, name, description, price}) => {
+const [quantity, setQuantity] = useState(0);
+
+const onAdd = (number) => {
+  number !== 0
+
+    ? setQuantity(quantity + number)
+    : alert("No agregaste ningun producto");
+};
+
   return (
-    <Card sx={{ maxWidth: 350 }}>
+  <div className='detailContainer'>
+    <Card sx={{ maxWidth: 450 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height=""
           image={img}
-          alt=""
+          alt={name}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h4" component="div">
             {name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body1" color="text.primary">
             {description}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            ${price}
-          </Typography>        
+          </Typography>    
         </CardContent>
       </CardActionArea>
+      <Typography className="price" variant="body3" color="text.primary">
+            Precio: ${price}
+          </Typography>      
+          <Typography className="stock" variant="body3" color="text.primary">
+            Stock: {stock}
+          </Typography> 
       <CardActions>
-        { <ItemCount stock={5} initial={1} /> }  
       </CardActions>
+      <div className='counter-section'>
+        { quantity === 0 ? <ItemCount stock={stock} initial={1} onAdd={onAdd} /> : <Link to= "/cart" className='btn-buy' >Terminar Compra </Link>} 
+      </div>
     </Card>
+  </div>
   );
-}
+};
+
+export default ItemDetail;

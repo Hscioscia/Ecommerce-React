@@ -12,7 +12,7 @@ const ItemDetailContainer = () =>{
         getProductId(id)
             .then(res => {
                 setProduct(res)
-                setProduct(data.find(prod => prod.id === Number(id)));
+                (data.find(prod => prod.id === Number(id)));
             }
             )
             .catch(err => console.log(err))
@@ -22,7 +22,7 @@ const ItemDetailContainer = () =>{
 
     return(
         <div key={product.id}>
-        <ItemDetail id = {id} product = {product} {...product} />
+        <ItemDetail id = {id} product = {product} {...product}/>
         </div>
     )
 };

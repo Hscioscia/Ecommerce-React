@@ -1,15 +1,76 @@
 .btn1, .btn2{
 
-  color: #090909;
-  padding: 0.7em 1.7em;
   font-size: 18px;
   border-radius: 0.5em;
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
  
+    min-width: 50px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #80ed99;
+    box-shadow: 0 5px #57cc99;
+  }
+
+ .btn3{
+    min-width: 100px;
+    height: 40px;
+    color: #fff;
+    padding: 10px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #6c757d;
+    box-shadow: 0 5px #495057;
+  }
+  .btn3:hover {
+    box-shadow: 0 3px #495057;
+    top: 1px;
+  }
+  .btn3:active {
+    box-shadow: 0 0 #495057;
+    top: 5px;
+ }
+ 
+ .counterC{
+  font-size: 15px;
+  margin: 50px;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  flex-direction:row;
+
+  justify-content: space-between;
  }
 
- .counterC{
-  font-size: 20px;
-  margin: 100px;
+ .cant{
+  min-width: 100px;
+  color: #fff;
+  padding: 10px 10px;
+  margin: 10px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display:inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #6c757d;
  }
+
+
+ 

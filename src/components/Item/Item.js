@@ -9,7 +9,7 @@ import '../Item/Item.css'
 
 export default function ActionAreaCard({data}) {
   return (
-    <Card sx={{ maxWidth: 320}}>
+    <Card sx={{ maxWidth: 340}}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -21,7 +21,7 @@ export default function ActionAreaCard({data}) {
           <Typography gutterBottom variant="h5" component="div">
             {data.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.primary">
             ${data.price}
           </Typography>
         </CardContent>

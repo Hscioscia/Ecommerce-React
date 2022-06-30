@@ -654,6 +654,6 @@ export const getProductId = (id) =>{
           else{
               reject("")
           } 
-      }, 1500);
+      }, 500);
   })
 }
