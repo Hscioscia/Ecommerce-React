@@ -8,15 +8,20 @@ import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../ItemDetail/ItemDetail.css';
+import { useCartContext } from '../Context/CartContext';
+
 
 const ItemDetail = ({img, img2, stock, id, category, name, description, price}) => {
 const [quantity, setQuantity] = useState(0);
+const { addItem } = useCartContext();
 
 const onAdd = (number) => {
   number !== 0
 
     ? setQuantity(quantity + number)
     : alert("No agregaste ningun producto");
+
+    addItem({img, id, name, description, price}, quantity);
 };
 
   return (

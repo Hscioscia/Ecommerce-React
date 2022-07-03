@@ -18,7 +18,6 @@ const ItemDetailContainer = () =>{
             .catch(err => console.log(err))
     }, [id]);
 
-    console.log("ID:", id);
 
     return(
         <div key={product.id}>

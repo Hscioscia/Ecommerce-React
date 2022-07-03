@@ -13,7 +13,6 @@ const ItemListContainer = () =>{
         categoryId ? setProducts(data.filter((i) => i.category === categoryId)) : setProducts(data);
     }, [categoryId]);
 
-    console.log("categoryID", categoryId)
                 
     return(
             <ItemList products= {products} {...products} />
@@ -21,5 +20,3 @@ const ItemListContainer = () =>{
 }
 
 export default ItemListContainer;
-
-/* categoryId ? setProducts(data.filter( i => i.category === categoryId)) : setProducts(data); }, [categoryId]); */

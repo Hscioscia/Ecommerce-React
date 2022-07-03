@@ -1,24 +1,43 @@
 import './App.css';
+//Componentes y BrowserRouter
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Navigation from './components/Navigation/Navigation.js';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Cart from './components/Cart/Cart';
+import { CartProvider } from './components/Context/CartContext';
+//Theme
+import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme, GlobalStyles } from "./components/Theme/Theme";
+import SwithTheme from "./components/Theme/SwithTheme";
+import MainTitle from './components/Theme/Title';
 
 function App() {
+  const [theme, setTheme] = useState("light");
+  const toggleTheme = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
   return (
     <Router>
+       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+       <CartProvider>
       <div className="App">
+      <GlobalStyles />
         <header className="App-header">
         <Navigation />
-        <h1>TIENDA CHIC</h1>
+        <MainTitle />
         <Routes>
           <Route path= '/' element = {<ItemListContainer />} />
           <Route path='/category/:categoryId' element = {<ItemListContainer />} />
           <Route path='/item/:id' element =  {<ItemDetailContainer />} />
-          <Route path='/cart/' element='' /> 
+          <Route path='/cart/' element={<Cart />} /> 
         </Routes>
+        <SwithTheme onChange={() => toggleTheme()} text={theme === "light" ? "Light" : "Dark"}/>
         </header>
       </div>
+      </CartProvider>
+      </ThemeProvider>
     </Router>
   );
 }
