@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { getProductId, data } from "../../Data/data";
+import { getProductId } from "../../Data/data";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () =>{
@@ -12,7 +12,6 @@ const ItemDetailContainer = () =>{
         getProductId(id)
             .then(res => {
                 setProduct(res)
-                (data.find(prod => prod.id === Number(id)));
             }
             )
             .catch(err => console.log(err))
