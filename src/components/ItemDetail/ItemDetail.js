@@ -23,7 +23,7 @@ const onAdd = (number) => {
     ? setQuantity(quantity + number)
     : alert("No agregaste ningun producto");
 
-    addItem({img, id, name, description, price, category, stock}, quantity);
+    addItem({img, img2, id, name, description, price, category, stock, number});
 };
 
   return (
@@ -54,7 +54,8 @@ const onAdd = (number) => {
       <CardActions>
       </CardActions>
       <div className='counter-section'>
-        { quantity === 0 ? <ItemCount stock={stock} initial={1} onAdd={onAdd} /> : <Link to= "/cart" className='btn-buy' >Terminar Compra </Link>} 
+        { quantity === 0 ? <ItemCount stock={stock} initial={1} onAdd={onAdd} /> : <Link to= "/cart" className='btn-buy' > Ir al Carrito </Link>} 
+       <Link to= '/'> <button className='btn4'> Seguir comprando </button> </Link>
       </div>
     </Card>
   </div>
