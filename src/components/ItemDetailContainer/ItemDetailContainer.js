@@ -1,28 +1,40 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { getProductId } from "../../Data/data";
 import { useParams } from "react-router-dom";
-
-const ItemDetailContainer = () =>{
-
-    const [product, setProduct] = useState ([]);
-    const {id} = useParams();
-
-    useEffect(() => {
-        getProductId(id)
-            .then(res => {
-                setProduct(res)
-            }
-            )
-            .catch(err => console.log(err))
-    }, [id]);
+import { CircularProgress } from "@mui/material";
+import { db } from "../../Firebase/FirebaseConfig";
+import { getDoc, doc } from "firebase/firestore";
 
 
-    return(
-        <div key={product.id}>
-        <ItemDetail id = {id} product = {product} {...product}/>
+const ItemDetailContainer = () => {
+  const [product, setProduct] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);  
+  const { id } = useParams();
+
+  useEffect(() => {
+    setIsLoading(true)
+    const docRef = doc(db, 'sneakers-shop', id)
+    getDoc(docRef)
+        .then(doc => {
+            setProduct({ id: doc.id, ...doc.data() })
+        })
+        .then(() => {
+            setIsLoading(false)
+        })
+}, [id]);
+
+  return (
+    <div>
+      {isLoading ? (
+        <div className="loading">
+          <CircularProgress className="loading" color="inherit" />          
         </div>
-    )
-};
+      ) : (
+        <ItemDetail {...product} />
+      )}
+    </div>
+  );
+}
+
 
 export default ItemDetailContainer;

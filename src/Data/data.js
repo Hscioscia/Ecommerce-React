@@ -1,4 +1,4 @@
-export const data = [
+/*export const data = [
     //hombre
   {
     id: 1,
@@ -657,3 +657,4 @@ export const getProductId = (id) =>{
       }, 500);
   })
 }
+*/
