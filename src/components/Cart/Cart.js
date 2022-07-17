@@ -6,7 +6,7 @@ import "../Cart/Cart.css";
 
 
 const Cart = () => {
-  const { cart, removeItem, getQuantity, clear} = useContext(CartContext);
+  const { cart, removeItem, getQuantity, clear, getTotalPrice} = useContext(CartContext);
 
   return (
     <div className="cart-container">
@@ -17,8 +17,6 @@ const Cart = () => {
           <h2>Volver a comprar</h2>
         </Link>
       </div>
-      <p>Cantidad de productos en el carrito: {getQuantity()}</p>
-      {cart.length >= 2 ? <button onClick={() => clear()}> Vaciar Carrito </button> : null}
       <ul className={cart.length !== 0 ? "cart" : "hidden"}>
         {cart.map((products) => {
           return (
@@ -32,7 +30,7 @@ const Cart = () => {
                 <div>
                   <h4>{products.name}</h4>
                   <p> Precio por Unidad: {products.price} $</p>
-                  <p> Precio total: {products.price * products.quantity} $</p>
+                  <p> Precio total: {products.price * products.number} $</p>
                   <button onClick={() => removeItem(products.id)}>
                     Eliminar del carrito
                   </button>
@@ -42,6 +40,12 @@ const Cart = () => {
           );
         })}
       </ul>
+      <div className= {cart.length !== 0 ? "cart" : "hidden"}>
+      <p>Cantidad de productos en el carrito: {getQuantity()}</p>
+      <p>El total es: {getTotalPrice()} $ </p>
+      {cart.length >= 2 ? <button onClick={() => clear()}> Vaciar Carrito </button> : null}
+      <Link to= '/checkout'> <button> Ir a pagar </button> </Link>
+      </div>
     </div>
   );
 };

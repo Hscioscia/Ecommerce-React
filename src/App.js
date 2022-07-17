@@ -1,17 +1,19 @@
 import './App.css';
+import React, { useState } from "react";
 //Componentes y BrowserRouter
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Navigation from './components/Navigation/Navigation.js';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
 import { CartProvider } from './components/Context/CartContext';
-//Theme
-import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+//Theme Component
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./components/Theme/Theme";
 import SwithTheme from "./components/Theme/SwithTheme";
 import MainTitle from './components/Theme/Title';
+
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -28,10 +30,11 @@ function App() {
         <Navigation />
         <MainTitle />
         <Routes>
-          <Route path= '/' element = {<ItemListContainer />} />
+          <Route path='/' element = {<ItemListContainer />} />
           <Route path='/category/:categoryId' element = {<ItemListContainer />} />
           <Route path='/item/:id' element =  {<ItemDetailContainer />} />
-          <Route path='/cart/' element={<Cart />} /> 
+          <Route path='/cart/' element= {<Cart />} /> 
+          <Route path='/checkout' element= {<Checkout />} /> 
         </Routes>
         <SwithTheme onChange={() => toggleTheme()} text={theme === "light" ? "Light" : "Dark"}/>
         </header>
