@@ -1,20 +1,81 @@
-import '../Navigation/Navigation.css';
-import '../CartWidget/CartWidget.js'
-import CartWidget from '../CartWidget/CartWidget.js';
-import {Link} from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Container,
+  LogoContainer,
+  Wrapper,
+  Menu,
+  MenuItem,
+  MenuItemLink,
+  MobileIcon,
+} from "./Navbar.element";
+import {
+  FaBars,
+  FaTimes,
+  FaHome,
+  FaUserAlt,
+  FaFemale,
+} from "react-icons/fa";
+import { IconContext } from "react-icons";
+import CartWidget from "../CartWidget/CartWidget";
 
 const Navigation = () => {
-return(
-<nav className= "circle">
-<ul>
-  <Link to= '/' className='li'>Inicio</Link>
-  <Link to= '/category/hombre' className='li'>Hombre</Link>
-  <Link to= '/category/mujer' className='li'>Mujer</Link>
-  <Link to= '/category/talles' className='li'>Tabla de talles</Link>
-</ul>
-<CartWidget />
-</nav>
-)
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  return (
+    <Container>
+      <Wrapper>
+        <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
+          <LogoContainer>
+            <p>Tu tienda de ropa online</p>
+          </LogoContainer>
+
+          <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
+            {showMobileMenu ? <FaTimes /> : <FaBars />}
+          </MobileIcon>
+          <Menu open={showMobileMenu}>
+            <MenuItem>
+              <Link to="/" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                <MenuItemLink>
+                  <div>
+                    <FaHome />
+                    Inicio
+                  </div>
+                </MenuItemLink>
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link
+                to="/category/hombre"
+                onClick={() => setShowMobileMenu(!showMobileMenu)}
+              >
+                <MenuItemLink>
+                  <div>
+                    <FaUserAlt />
+                    Hombre
+                  </div>
+                </MenuItemLink>
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link
+                to="/category/mujer"
+                onClick={() => setShowMobileMenu(!showMobileMenu)}
+              >
+                <MenuItemLink>
+                  <div>
+                    <FaFemale />
+                    Mujer
+                  </div>
+                </MenuItemLink>
+              </Link>
+            </MenuItem>
+            <CartWidget />
+          </Menu>
+        </IconContext.Provider>
+      </Wrapper>
+    </Container>
+  );
 };
 
 export default Navigation;

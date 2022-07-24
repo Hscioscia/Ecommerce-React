@@ -8,11 +8,16 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { categoryId } = useParams();  
+  const { categoryId } = useParams();
 
-  useEffect(() => {  
+  useEffect(() => {
     const getData = async () => {
-      const q = categoryId ? query(collection(db, "sneakers-shop"), where("category", "==", categoryId)) : query(collection(db, "sneakers-shop"));
+      const q = categoryId
+        ? query(
+            collection(db, "sneakers-shop"),
+            where("category", "==", categoryId)
+          )
+        : query(collection(db, "sneakers-shop"));
       const querySnapshot = await getDocs(q);
       const docs = [];
       querySnapshot.forEach((doc) => {
@@ -23,12 +28,12 @@ const ItemListContainer = () => {
     };
 
     getData();
-    setIsLoading(true) 
+    setIsLoading(true);
   }, [categoryId]);
 
   return (
     <div>
-     {isLoading ? (
+      {isLoading ? (
         <div className="loading">
           <CircularProgress className="loading" color="inherit" />
         </div>

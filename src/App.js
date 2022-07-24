@@ -6,6 +6,7 @@ import Navigation from './components/Navigation/Navigation.js';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
+import Footer from './components/Footer/Footer';
 import { CartProvider } from './components/Context/CartContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //Theme Component
@@ -36,11 +37,12 @@ function App() {
           <Route path='/cart/' element= {<Cart />} /> 
           <Route path='/checkout' element= {<Checkout />} /> 
         </Routes>
-        <SwithTheme onChange={() => toggleTheme()} text={theme === "light" ? "Light" : "Dark"}/>
         </header>
+        <SwithTheme onChange={() => toggleTheme()} text={theme === "light" ? "Light" : "Dark"}/>
       </div>
       </CartProvider>
       </ThemeProvider>
+      <Footer />
     </Router>
   );
 }

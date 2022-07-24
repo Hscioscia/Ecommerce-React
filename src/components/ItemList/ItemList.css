@@ -1,14 +1,14 @@
-.cardsContainer{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction:row;
-    justify-content: space-between;
-    margin: 0;
-    margin-right: 0;
-    padding: 10px;
-    border: 2px solid white;
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  margin-right: 0;
+  padding: 10px;
+  border: 2px solid white;
 }
 
-.MuiPaper-root{
-    margin: 15px;
+.MuiPaper-root {
+  margin: 15px;
 }

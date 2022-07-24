@@ -1,0 +1,34 @@
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitForm {
+  min-width: 130px;
+  height: 40px;
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  margin-left: 25px;
+  margin-top: 30px;
+  margin-bottom: 150px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background: #4fe773;
+  box-shadow: 0 5px #3fb682;
+}
+.submitForm:hover {
+  box-shadow: 0 3px #3fb682;
+  top: 1px;
+}
+.submitForm:active {
+  box-shadow: 0 0 #3fb682;
+  top: 5px;
+}

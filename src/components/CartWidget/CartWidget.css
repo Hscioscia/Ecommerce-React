@@ -1,19 +1,18 @@
-.cartIcon{
-font-size: 2em;
-max-width: 5%;
-display: block;
-padding-left: 22em;
-margin: -5.6% 0 0 33%;
-cursor: pointer;
+.cartIcon {
+  cursor: pointer;
+  margin: 20px;
 }
 
-p{
-    color: #000000;
-    font-size: 0.8em;
-    margin: -80% 0 0 15%;
-    cursor: pointer;
+a:link {
+  text-decoration: none;
 }
-
-a:link {text-decoration: none }
-a:hover { color: black; font-family: arial; text-decoration: none }
-a:visited {color: black;  font-family: arial; text-decoration: none }
+a:hover {
+  color: black;
+  font-family: arial;
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+  font-family: arial;
+  text-decoration: none;
+}

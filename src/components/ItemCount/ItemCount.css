@@ -1,76 +1,154 @@
-.btn1, .btn2{
-
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
- 
-    min-width: 50px;
-    height: 40px;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    background: #80ed99;
-    box-shadow: 0 5px #57cc99;
-  }
-
- .btn3{
-    min-width: 100px;
-    height: 40px;
-    color: #fff;
-    padding: 10px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    background: #6c757d;
-    box-shadow: 0 5px #495057;
-  }
-  .btn3:hover {
-    box-shadow: 0 3px #495057;
-    top: 1px;
-  }
-  .btn3:active {
-    box-shadow: 0 0 #495057;
-    top: 5px;
- }
- 
- .counterC{
-  font-size: 15px;
-  margin: 50px;
-  padding: 10px;
-  font-weight: bold;
-  display: flex;
-  flex-direction:row;
-
-  justify-content: space-between;
- }
-
- .cant{
-  min-width: 100px;
+.btn1 {
+  max-width: 100px;
+  height: 40px;
+  width: 50px;
   color: #fff;
-  padding: 10px 10px;
-  margin: 10px 10px;
+  padding: 5px 10px;
+  margin: 0px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  display:inline-block;
+  position: relative;
+  display: block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #d90429;
+  color: #d90429;
+}
+
+.btn1:hover {
+  color: #fff;
+}
+
+.btn1:hover:after {
+  width: 100%;
+}
+
+.btn1:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #d90429;
+}
+
+.btn2 {
+  max-width: 100px;
+  height: 40px;
+  width: 50px;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #d90429;
+  color: #d90429;
+}
+
+.btn2:hover {
+  color: #fff;
+}
+
+.btn2:hover:after {
+  width: 100%;
+}
+
+.btn2:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #d90429;
+}
+
+.btn3 {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: block;
+  outline: none;
+  overflow: hidden;
+  border-radius: 5px;
+  border: none;
+  background-color: #3a86ff;
+}
+
+.btn3:hover {
+  border-radius: 5px;
+  padding-right: 24px;
+  padding-left: 8px;
+}
+
+.btn3:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+.btn3:after {
+  content: "\00BB";
+  position: absolute;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 40px;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+.counterC {
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cant {
+  max-width: 150px;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px 0px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: default;
+  transition: all 0.3s ease;
+  display: block;
   outline: none;
   border-radius: 5px;
   border: none;
   background: #6c757d;
- }
+}
 
-
- 
+@media (max-width: 576px) and (min-width: 300px) {
+  .cant,
+  .counterC {
+    max-width: 90%;
+    font-size: 14px;
+  }
+}
