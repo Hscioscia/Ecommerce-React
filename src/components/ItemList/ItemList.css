@@ -12,3 +12,9 @@
 .MuiPaper-root {
   margin: 15px;
 }
+
+@media (max-width: 576px) and (min-width: 300px) {
+  .cardsContainer {
+    margin: 20px;
+  }
+}
