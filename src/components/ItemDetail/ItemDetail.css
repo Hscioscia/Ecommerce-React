@@ -101,7 +101,7 @@
   transition: 0.4s;
 }
 
-@media (max-width: 576px) and (min-width: 300px) {
+@media (max-width: 576px) and (min-width: 299px) {
   .detailContainer,
   .price,
   .stock,
@@ -110,7 +110,7 @@
     font-size: 14px;
   }
   .btn4 {
-    margin-left: 80px;
+    margin-left: 45px;
   }
 
   .detailContainer {
