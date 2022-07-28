@@ -8,6 +8,11 @@
   height: auto;
 }
 
+.counter-section {
+  height: auto;
+  margin: 20px;
+}
+
 .price {
   font-weight: bold;
   font-size: 1rem;
@@ -15,22 +20,20 @@
 }
 
 .stock {
-  padding: 40px;
   font-weight: bold;
 }
 
 .btn-buy {
-  max-width: 110px;
+  max-width: 150px;
   height: 30px;
   color: #fff;
-  margin: 30px;
-  margin-left: 142px;
+  margin: 20px;
   padding: 5px 25px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  display: block;
+  display: inline-flex;
   outline: none;
   overflow: hidden;
   border-radius: 5px;
@@ -66,11 +69,12 @@
   color: #fff;
   margin: 20px;
   padding: 5px 25px;
+  padding-top: 7px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   outline: none;
   overflow: hidden;
   border-radius: 5px;
@@ -104,7 +108,8 @@
   .detailContainer,
   .price,
   .stock,
-  .btn4 {
+  .btn4,
+  .btn-buy {
     max-width: 90%;
     font-size: 14px;
   }
@@ -113,5 +118,4 @@
     padding-left: 15px;
     margin: 15px;
   }
-
 }
