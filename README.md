@@ -36,3 +36,10 @@ _CSS_
 ### Instalación 🔧
 
 
+* Clonar el repositorio : `https://github.com/Hscioscia/Ecommerce-React.git`
+
+* Instala las dependencias : `npm install`
+
+* Ejecutar : `npm run start`
+
+
