@@ -145,4 +145,9 @@ hr {
   .emptyCart {
     margin-bottom: 160px;
   }
+
+  .cart-container{
+    max-width: 70%;
+    padding-right: 35px;
+  }
 }
